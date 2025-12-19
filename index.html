@@ -9,30 +9,57 @@
         content="Manage your projects, tasks, and team collaboration with ProjFlow - the modern project management app for Android.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Floating Particles -->
+    <div id="particles"></div>
+
     <!-- Hero Section -->
     <header class="hero">
         <nav class="navbar">
             <div class="logo">
-                <span class="logo-icon">📋</span>
+                <div class="logo-icon-wrapper">
+                    <span class="logo-icon">📋</span>
+                </div>
                 <span class="logo-text">ProjFlow</span>
             </div>
-            <a href="#download" class="nav-cta">Download App</a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How it Works</a>
+                <a href="#download">Download</a>
+            </div>
+            <a href="#download" class="nav-cta">
+                <span>Get the App</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
         </nav>
 
         <div class="hero-content">
             <div class="hero-text">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span>Now Available for Android</span>
+                </div>
                 <h1 class="hero-title">
-                    Manage Projects <br>
-                    <span class="gradient-text">Like a Pro</span>
+                    <span class="title-line">Manage Projects</span>
+                    <span class="title-line gradient-text">Like a Pro</span>
                 </h1>
                 <p class="hero-description">
                     The ultimate project management app for teams. Create projects, assign tasks,
-                    collaborate in real-time, and track progress - all from your Android device.
+                    collaborate in real-time, and track progress — all from your pocket.
                 </p>
                 <div class="hero-buttons">
                     <a href="#download" class="btn btn-primary">
@@ -42,17 +69,25 @@
                         </svg>
                         Download for Android
                     </a>
-                    <a href="#features" class="btn btn-secondary">Learn More</a>
+                    <a href="#features" class="btn btn-glass">
+                        <span>Explore Features</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                        </svg>
+                    </a>
                 </div>
                 <div class="hero-stats">
                     <div class="stat">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Free</span>
+                        <span class="stat-number" data-count="100">100%</span>
+                        <span class="stat-label">Free Forever</span>
                     </div>
+                    <div class="stat-divider"></div>
                     <div class="stat">
                         <span class="stat-number">∞</span>
-                        <span class="stat-label">Projects</span>
+                        <span class="stat-label">Unlimited Projects</span>
                     </div>
+                    <div class="stat-divider"></div>
                     <div class="stat">
                         <span class="stat-number">24/7</span>
                         <span class="stat-label">Real-time Sync</span>
@@ -60,68 +95,220 @@
                 </div>
             </div>
             <div class="hero-image">
+                <div class="phone-glow"></div>
                 <div class="phone-mockup">
+                    <div class="phone-notch"></div>
                     <div class="phone-screen">
                         <div class="app-preview">
                             <div class="preview-header">
-                                <div class="preview-avatar"></div>
+                                <div class="preview-avatar">
+                                    <span>👤</span>
+                                </div>
                                 <div class="preview-text-group">
                                     <div class="preview-text short"></div>
                                     <div class="preview-text tiny"></div>
                                 </div>
+                                <div class="preview-bell">🔔</div>
+                            </div>
+                            <div class="preview-welcome">
+                                <div class="preview-text medium"></div>
                             </div>
                             <div class="preview-stats">
-                                <div class="preview-stat-card"></div>
-                                <div class="preview-stat-card"></div>
+                                <div class="preview-stat-card stat-blue">
+                                    <div class="stat-icon">📊</div>
+                                    <div class="stat-info">
+                                        <div class="preview-text tiny"></div>
+                                        <div class="preview-text short bold"></div>
+                                    </div>
+                                </div>
+                                <div class="preview-stat-card stat-purple">
+                                    <div class="stat-icon">✅</div>
+                                    <div class="stat-info">
+                                        <div class="preview-text tiny"></div>
+                                        <div class="preview-text short bold"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="preview-section-title">
+                                <div class="preview-text medium"></div>
                             </div>
                             <div class="preview-projects">
-                                <div class="preview-project"></div>
-                                <div class="preview-project"></div>
-                                <div class="preview-project"></div>
+                                <div class="preview-project">
+                                    <div class="project-icon">🎨</div>
+                                    <div class="project-info">
+                                        <div class="preview-text short"></div>
+                                        <div class="preview-text tiny"></div>
+                                    </div>
+                                    <div class="project-progress" style="--progress: 70%"></div>
+                                </div>
+                                <div class="preview-project">
+                                    <div class="project-icon">💻</div>
+                                    <div class="project-info">
+                                        <div class="preview-text short"></div>
+                                        <div class="preview-text tiny"></div>
+                                    </div>
+                                    <div class="project-progress" style="--progress: 45%"></div>
+                                </div>
+                                <div class="preview-project">
+                                    <div class="project-icon">📱</div>
+                                    <div class="project-info">
+                                        <div class="preview-text short"></div>
+                                        <div class="preview-text tiny"></div>
+                                    </div>
+                                    <div class="project-progress" style="--progress: 90%"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="floating-cards">
+                    <div class="floating-card card-1">
+                        <span class="card-emoji">✅</span>
+                        <span class="card-text">Task Completed!</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <span class="card-emoji">👥</span>
+                        <span class="card-text">Team Invite Sent</span>
+                    </div>
+                    <div class="floating-card card-3">
+                        <span class="card-emoji">🎯</span>
+                        <span class="card-text">Goal Achieved!</span>
+                    </div>
+                </div>
             </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll to explore</span>
         </div>
     </header>
 
     <!-- Features Section -->
     <section id="features" class="features">
         <div class="container">
-            <h2 class="section-title">Everything You Need</h2>
-            <p class="section-subtitle">Powerful features to manage your projects efficiently</p>
+            <div class="section-header">
+                <span class="section-badge">Features</span>
+                <h2 class="section-title">Everything You Need</h2>
+                <p class="section-subtitle">Powerful features designed to make project management effortless</p>
+            </div>
 
             <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Dashboard</h3>
-                    <p>Get a complete overview of all your projects, tasks, and progress at a glance.</p>
+                <div class="feature-card feature-card-large">
+                    <div class="feature-glow"></div>
+                    <div class="feature-icon-wrapper">
+                        <span class="feature-icon">📊</span>
+                    </div>
+                    <h3>Intuitive Dashboard</h3>
+                    <p>Get a complete overview of all your projects, tasks, and team activity at a glance with our
+                        beautiful, informative dashboard.</p>
+                    <div class="feature-visual dashboard-visual">
+                        <div class="mini-chart"></div>
+                        <div class="mini-chart"></div>
+                        <div class="mini-chart"></div>
+                    </div>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">✅</div>
+                    <div class="feature-icon-wrapper small">
+                        <span class="feature-icon">✅</span>
+                    </div>
                     <h3>Task Management</h3>
-                    <p>Create, assign, and track tasks with due dates, priorities, and status updates.</p>
+                    <p>Create, assign, and track tasks with due dates, priorities, and real-time status updates.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">👥</div>
+                    <div class="feature-icon-wrapper small">
+                        <span class="feature-icon">👥</span>
+                    </div>
                     <h3>Team Collaboration</h3>
-                    <p>Invite team members, assign roles, and work together in real-time.</p>
+                    <p>Invite team members, assign roles, and work together seamlessly in real-time.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">💬</div>
-                    <h3>Team Chat</h3>
-                    <p>Built-in chat for project discussions and team communication.</p>
+                    <div class="feature-icon-wrapper small">
+                        <span class="feature-icon">💬</span>
+                    </div>
+                    <h3>Built-in Chat</h3>
+                    <p>Communicate instantly with project-specific and global team chat rooms.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🔔</div>
-                    <h3>Notifications</h3>
-                    <p>Stay updated with real-time notifications for task updates and deadlines.</p>
+                    <div class="feature-icon-wrapper small">
+                        <span class="feature-icon">🔔</span>
+                    </div>
+                    <h3>Smart Notifications</h3>
+                    <p>Stay updated with intelligent notifications for deadlines, updates, and mentions.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">📈</div>
-                    <h3>Progress Tracking</h3>
-                    <p>Visual progress bars and statistics to monitor project completion.</p>
+                    <div class="feature-icon-wrapper small">
+                        <span class="feature-icon">📈</span>
+                    </div>
+                    <h3>Progress Analytics</h3>
+                    <p>Track project completion with visual progress indicators and detailed statistics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Simple Steps</span>
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Get started in minutes with our intuitive workflow</p>
+            </div>
+
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Create Your Project</h3>
+                        <p>Set up a new project with title, description, and deadline in seconds.</p>
+                    </div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Invite Your Team</h3>
+                        <p>Add team members by email and assign them to specific tasks.</p>
+                    </div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Track Progress</h3>
+                        <p>Monitor task completion and project milestones in real-time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="proof-grid">
+                <div class="proof-item">
+                    <span class="proof-icon">🚀</span>
+                    <span class="proof-number">10x</span>
+                    <span class="proof-label">Faster Project Setup</span>
+                </div>
+                <div class="proof-item">
+                    <span class="proof-icon">💯</span>
+                    <span class="proof-number">100%</span>
+                    <span class="proof-label">Free to Use</span>
+                </div>
+                <div class="proof-item">
+                    <span class="proof-icon">⚡</span>
+                    <span class="proof-number">Real-time</span>
+                    <span class="proof-label">Instant Updates</span>
+                </div>
+                <div class="proof-item">
+                    <span class="proof-icon">🔒</span>
+                    <span class="proof-number">Secure</span>
+                    <span class="proof-label">Data Protection</span>
                 </div>
             </div>
         </div>
@@ -131,16 +318,26 @@
     <section id="download" class="download">
         <div class="container">
             <div class="download-card">
-                <h2>Ready to Get Started?</h2>
-                <p>Download ProjFlow now and take control of your projects!</p>
-                <a href="YOUR_APK_DOWNLOAD_LINK_HERE" class="btn btn-primary btn-large">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M17.523 2.023l-2.12 3.674a9.956 9.956 0 00-6.806 0L6.477 2.023a.5.5 0 00-.866.5l2.09 3.622A9.962 9.962 0 002 15.001h20a9.962 9.962 0 00-5.7-8.856l2.09-3.622a.5.5 0 00-.867-.5zM7 13a1 1 0 110-2 1 1 0 010 2zm10 0a1 1 0 110-2 1 1 0 010 2zM4 16h16v1a7 7 0 01-7 7h-2a7 7 0 01-7-7v-1z" />
-                    </svg>
-                    Download APK
-                </a>
-                <p class="download-note">📱 Android 8.0+ required • ~25 MB</p>
+                <div class="download-glow"></div>
+                <div class="download-content">
+                    <h2>Ready to Transform Your Workflow?</h2>
+                    <p>Join teams who manage projects more efficiently with ProjFlow</p>
+                    <a href="YOUR_APK_DOWNLOAD_LINK_HERE" class="btn btn-download">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.523 2.023l-2.12 3.674a9.956 9.956 0 00-6.806 0L6.477 2.023a.5.5 0 00-.866.5l2.09 3.622A9.962 9.962 0 002 15.001h20a9.962 9.962 0 00-5.7-8.856l2.09-3.622a.5.5 0 00-.867-.5zM7 13a1 1 0 110-2 1 1 0 010 2zm10 0a1 1 0 110-2 1 1 0 010 2zM4 16h16v1a7 7 0 01-7 7h-2a7 7 0 01-7-7v-1z" />
+                        </svg>
+                        <span>
+                            <strong>Download for Android</strong>
+                            <small>Version 1.0 • ~25 MB</small>
+                        </span>
+                    </a>
+                    <div class="download-info">
+                        <span>📱 Android 8.0+ required</span>
+                        <span>•</span>
+                        <span>🔒 100% Safe & Secure</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -150,14 +347,21 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <span class="logo-icon">📋</span>
+                    <div class="logo-icon-wrapper small">
+                        <span class="logo-icon">📋</span>
+                    </div>
                     <span class="logo-text">ProjFlow</span>
                 </div>
                 <p class="footer-text">
                     Made with ❤️ for project managers and teams
                 </p>
+                <div class="footer-links">
+                    <a href="#features">Features</a>
+                    <a href="#how-it-works">How it Works</a>
+                    <a href="#download">Download</a>
+                </div>
                 <p class="footer-copyright">
-                    © 2026 ProjFlow. All rights reserved.
+                    © 2024 ProjFlow. All rights reserved.
                 </p>
             </div>
         </div>
