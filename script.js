@@ -210,3 +210,55 @@ window.addEventListener('load', () => {
         document.body.style.opacity = '1';
     });
 });
+
+// Feedback form handling
+const feedbackForm = document.getElementById('feedbackForm');
+const formSuccess = document.getElementById('formSuccess');
+
+if (feedbackForm) {
+    feedbackForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const submitBtn = this.querySelector('.btn-submit');
+        const originalText = submitBtn.innerHTML;
+
+        // Show loading state
+        submitBtn.innerHTML = '<span>Sending...</span>';
+        submitBtn.disabled = true;
+
+        try {
+            const formData = new FormData(this);
+            const response = await fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                // Hide form and show success message
+                this.style.display = 'none';
+                formSuccess.style.display = 'block';
+                formSuccess.style.animation = 'fadeIn 0.5s ease';
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('There was an error sending your feedback. Please try again.');
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        }
+    });
+}
+
+// Add fadeIn animation
+const fadeInStyle = document.createElement('style');
+fadeInStyle.textContent = `
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+`;
+document.head.appendChild(fadeInStyle);
