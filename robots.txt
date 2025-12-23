@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://projflow-website-nzwi8bqiy-sudhanva-bs-projects.vercel.app/sitemap.xml
+Sitemap: https://projflow-website.vercel.app/sitemap.xml
