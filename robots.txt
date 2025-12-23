@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://geminalsudhanva.github.io/projflow-website/sitemap.xml
